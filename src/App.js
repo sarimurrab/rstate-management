@@ -1,14 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './App.css';
-import Lunch from './lunch.js'
+import {Message} from './message.js'
 
 
 function App() {
+
+  let[count, setCount] = useState(0)
+  let[isMorning, setMorning] = useState(false);
+
+
   return (
-    <div className="App">
-    <Lunch dish1="Kheer" dish2="Puri"/>
-    
-    <Lunch dish1="Halwa" dish2="Salad"/>
+    <div className={`box ${isMorning? 'dayLight' : ''}`} align="center">
+
+    <h1>Day Time = {isMorning?'Morning':'Night'}</h1>
+    <Message count = {count}/>
+    <hr/>
+    <button onClick={
+      ()=> setCount(count+1)
+      }>Update Counter</button>
+
+    <button onClick={
+      ()=> setMorning(!isMorning)
+    }>Convert Day</button>
     </div>
   );
 }
