@@ -7,12 +7,12 @@ import Parent from './parent.js'
 function App() {
 
   let countArray = useState(0);
-return (
+  return (
 
         <CounterContext.Provider value={countArray}>
 
-          <div >
-
+          <div align="center">
+          <h1>State Management</h1>
           <Parent />
           
           </div>
